@@ -58,7 +58,7 @@ except Exception as exc:
     print("[ERROR] exception while getting watched movies: {}".format(repr(exc)))
 
 print(f"Parsed {len(movies)} movies successfully, {len(failed)} failed")
-with open("watched_movies.json", "w", encoding="utf-8") as f:
-    json.dump(movies, f, indent=4)
-with open("failed_watched_movies.json", "w", encoding="utf-8") as f:
-    json.dump(failed, f, indent=4)
+with open("letterboxd_watched_movies.json", "w", encoding="utf-8") as f:
+    json.dump(movies, f, indent=4, ensure_ascii=False)
+with open("letterboxd_failed_watched_movies.json", "w", encoding="utf-8") as f:
+    json.dump(failed, f, indent=4, ensure_ascii=False)
